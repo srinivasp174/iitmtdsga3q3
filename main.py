@@ -153,3 +153,7 @@ def code_interpreter(request: CodeRequest):
         "error": error_lines,
         "result": execution_result["output"]
     }
+    
+@app.get("/code-interpreter")
+def code_interpreter_health_check():
+    return {"status": "ready"}
